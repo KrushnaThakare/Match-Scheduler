@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DPL 2026 Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>DPL 2026 Match Scheduler</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab active" onclick="switchTab('day1', event)">Day 1</button>
+    <button class="tab" onclick="switchTab('day2', event)">Day 2</button>
+</div>
+
+<!-- Export -->
+<div style="text-align:center;">
+    <button onclick="downloadImage()">Download Image</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+</div>
+
+<div class="container">
+
+    <!-- MATCH LIST -->
+    <div class="match-list">
+        <h2>Match Pool</h2>
+
+        <div class="add-match">
+            <input type="text" id="matchInput" placeholder="Team A vs Team B">
+            <button onclick="addMatch()">Add</button>
+        </div>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="schedule">
+        <h2>Schedule</h2>
+
+        <div class="add-slot">
+            <input type="text" id="dateInput" placeholder="Date">
+            <input type="text" id="timeInput" placeholder="Time">
+            <button onclick="addSlot()">Add Slot</button>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Match</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

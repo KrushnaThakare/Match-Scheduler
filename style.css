@@ -1,0 +1,114 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    background: #f4f6f8;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.match-list, .schedule {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.match-list {
+    width: 30%;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.schedule {
+    width: 70%;
+}
+
+.match {
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 5px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slot {
+    min-height: 50px;
+    background: #f9f9f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #28a745;
+    color: white;
+}
+
+.add-match, .add-slot {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 8px;
+    flex: 1;
+}
+
+button {
+    padding: 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-btn {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.tabs {
+    margin-bottom: 10px;
+}
+
+.tab {
+    padding: 8px 12px;
+    margin-right: 5px;
+    background: #ccc;
+    border: none;
+}
+
+.tab.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .match-list, .schedule {
+        width: 100%;
+    }
+}
