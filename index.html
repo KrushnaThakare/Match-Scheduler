@@ -9,39 +9,53 @@
 
 <h1>DPL 2026 Match Scheduler</h1>
 
-<!-- Tabs -->
 <div class="tabs">
     <button class="tab active" onclick="switchTab('day1', event)">Day 1</button>
     <button class="tab" onclick="switchTab('day2', event)">Day 2</button>
 </div>
-
-<!-- Export -->
-<div style="text-align:center;">
+<div style="text-align:center; margin-bottom: 10px;">
     <button onclick="downloadImage()">Download Image</button>
     <button onclick="downloadPDF()">Download PDF</button>
 </div>
-
 <div class="container">
 
     <!-- MATCH LIST -->
     <div class="match-list">
+
         <h2>Match Pool</h2>
+
+        <div class="group-generator">
+            <h3>Auto Generate Matches</h3>
+            <textarea id="groupA" placeholder="Group A Teams"></textarea>
+            <textarea id="groupB" placeholder="Group B Teams"></textarea>
+            <button onclick="generateGroupMatches()">Generate Matches</button>
+        </div>
 
         <div class="add-match">
             <input type="text" id="matchInput" placeholder="Team A vs Team B">
             <button onclick="addMatch()">Add</button>
         </div>
+
+        <div id="matchContainer"></div>
     </div>
 
     <!-- SCHEDULE -->
     <div class="schedule">
-        <h2>Schedule</h2>
 
-        <div class="add-slot">
-            <input type="text" id="dateInput" placeholder="Date">
-            <input type="text" id="timeInput" placeholder="Time">
-            <button onclick="addSlot()">Add Slot</button>
+        <h2>Smart Slot Generator</h2>
+
+        <div class="smart-gen">
+            <input id="duration" placeholder="Match Duration (mins)">
+            <input id="dates" placeholder="Dates (comma separated)">
+            <input id="morningStart" placeholder="Morning Start (7)">
+            <input id="morningMatches" placeholder="Morning Matches">
+            <input id="eveningStart" placeholder="Evening Start (16)">
+            <input id="eveningMatches" placeholder="Evening Matches">
+
+            <button onclick="generateSmartSlots()">Generate Slots</button>
         </div>
+
+        <h2>Schedule</h2>
 
         <table>
             <thead>
@@ -54,14 +68,13 @@
             </thead>
             <tbody></tbody>
         </table>
+
     </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 <script src="script.js"></script>
 
 </body>
